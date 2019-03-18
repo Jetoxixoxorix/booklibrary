@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import importBooks from './files/books.json';
+import {Book} from './Book';
 
 export class Books extends Component {
     constructor() {
@@ -10,14 +11,8 @@ export class Books extends Component {
     }
 
     render(){
-        const allBooks = this.state.allBooks.map(book => 
-            <div>
-              <li>{book.id}</li>
-                <li>{book.name}</li>
-                <li>{book.author}</li>   
-            </div>
 
-        )
+        const allBooks = this.state.allBooks.map(book => <Book book={book} key={book.id}></Book>)
 
         return (
             <div>
