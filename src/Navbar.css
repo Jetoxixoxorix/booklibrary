@@ -1,4 +1,15 @@
 .navbar {
     background-color: gold;
+    display: flex;
+    justify-content: space-between;
 }
 
+.menu {
+    list-style: none;
+    display: flex;
+
+}
+
+.menu li {
+    margin-right: 40px;
+}

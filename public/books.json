@@ -1,0 +1,15 @@
+{
+    "Books": [
+        {
+            "id": 1,
+            "name": "Lod",
+            "auhor": "Jacek Dukaj"
+        },
+        {
+            "id": 2,
+            "name": "Slepowidzenie",
+            "auhor": "Peter Watts"
+        }
+    ]
+
+}

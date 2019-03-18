@@ -4,19 +4,17 @@ import './Navbar.css';
 export class Navbar extends Component {
     render() {
         return (
-            <div className='navbar'>
-                <div>
-                    <ul>
+            <nav className='navbar'>
+                <ul className="menu menu-left">
                         <li>Home</li>
                         <li>Books</li>
                         <li>Add book</li>
                     </ul>
-                    <ul>
+                    <ul className="menu menu-right">
                         <li>Register</li>
                         <li>Log in</li>
                     </ul>
-                </div>
-            </div>
+            </nav>
         );
     }
 }
