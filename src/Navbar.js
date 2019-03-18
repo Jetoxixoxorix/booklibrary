@@ -9,7 +9,7 @@ export class Navbar extends Component {
                 <ul className="menu menu-left">
                         <li>Home</li>
                         <li><NavLink to="books">Books</NavLink></li>
-                        <li>Add book</li>
+                        <li><NavLink to="add-book">Add book</NavLink></li>
                     </ul>
                     <ul className="menu menu-right">
                         <li>Register</li>
