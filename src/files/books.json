@@ -9,6 +9,21 @@
             "id": 2,
             "title": "Slepowidzenie",
             "author": "Peter Watts"
+        },
+        {
+            "id": 3,
+            "title": "Metro 2033",
+            "author": "Dmitrij Gluchovsky"
+        },
+        {
+            "id": 4,
+            "title": "Pan Tadeusz",
+            "author": "Adam Mickiewicz"
+        },
+        {
+            "id": 5,
+            "title": "Pod kopula",
+            "author": "Stephen King"
         }
     ]
 }

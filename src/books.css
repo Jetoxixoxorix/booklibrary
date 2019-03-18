@@ -1,0 +1,13 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}
+
+.book {
+    margin-top: 10px;
+    border: solid 3px;
+    width: 400px;
+}
+

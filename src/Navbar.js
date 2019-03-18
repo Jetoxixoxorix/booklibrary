@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 import './Navbar.css';
 
 export class Navbar extends Component {
@@ -7,7 +8,7 @@ export class Navbar extends Component {
             <nav className='navbar'>
                 <ul className="menu menu-left">
                         <li>Home</li>
-                        <li>Books</li>
+                        <li><NavLink to="books">Books</NavLink></li>
                         <li>Add book</li>
                     </ul>
                     <ul className="menu menu-right">
