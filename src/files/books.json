@@ -3,27 +3,32 @@
         {
             "id": 1,
             "title": "Lod",
-            "author": "Jacek Dukaj"
+            "author": "Jacek Dukaj",
+            "pages": 1000
         },
         {
             "id": 2,
             "title": "Slepowidzenie",
-            "author": "Peter Watts"
+            "author": "Peter Watts",
+            "pages": 450
         },
         {
             "id": 3,
             "title": "Metro 2033",
-            "author": "Dmitrij Gluchovsky"
+            "author": "Dmitrij Gluchovsky",
+            "pages": 550
         },
         {
             "id": 4,
             "title": "Pan Tadeusz",
-            "author": "Adam Mickiewicz"
+            "author": "Adam Mickiewicz",
+            "pages": 200
         },
         {
             "id": 5,
             "title": "Pod kopula",
-            "author": "Stephen King"
+            "author": "Stephen King",
+            "pages": 900
         }
     ]
 }

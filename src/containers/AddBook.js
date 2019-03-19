@@ -10,6 +10,7 @@ export class AddBook extends Component {
                     <input type='text' id='title' />
                     <label htmlFor='author'>Author:</label>
                     <input type='text' id='author'/>
+                    <input type='submit' value='Add book'/>
                 </form>
             </div>
         )
