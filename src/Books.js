@@ -7,8 +7,15 @@ export class Books extends Component {
     constructor() {
         super();
         this.state = {
-            allBooks: importBooks.books
+            //allBooks: importBooks.books
+            allBooks: []
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            allBooks: importBooks.books
+        })
     }
 
     render(){
@@ -23,4 +30,3 @@ export class Books extends Component {
         );
     }
 }
-
