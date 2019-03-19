@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../styles/App.css';
 import {Navbar} from './Navbar';
-import {BooksContainer} from './containers/BooksContainer';
+import {BooksContainer} from '../containers/BooksContainer';
 import {Switch, Route} from 'react-router-dom';
-import {AddBook} from './AddBook';
+import {AddBook} from '../containers/AddBook';
 
 class App extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import importBooks from '../files/books.json';
-import {Book} from '../Book';
-import '../books.css';
+import {Book} from '../components/Book';
+import '../styles/books.css';
 import {Books} from '../components/Books';
 
 export class BooksContainer extends Component {
