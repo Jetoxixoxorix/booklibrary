@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const BookDetails = (props) => {
+export const BookDetails = props => {
     return(
         <div className="book-details">
             <p>Id: {props.book.id}</p>

@@ -3,10 +3,9 @@ import {NavLink} from 'react-router-dom';
 
 export const Book = props => {
     return (
-        <NavLink to={`book-details/${props.book.id}`}>
+        <NavLink to={`/book-details/${props.book.id}`}>
             <div className="book">
-                <li>Id: {props.book.id}</li>
-                <li>Title:{props.book.title}</li>
+                <li>Title: {props.book.title}</li>
                 <li>Author: {props.book.author}</li>
             </div>
         </NavLink>

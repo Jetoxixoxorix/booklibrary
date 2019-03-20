@@ -10,12 +10,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <Switch>
-          <Route path='/books' component={BooksContainer}/>
-          <Route path='/add-book' component={AddBook}/>
-          <Route path='/book-details/:id' component={BookDetailsContainer} />
-        </Switch>
+      <Navbar />
+      <Switch>
+        <Route path='/books' component={BooksContainer}/>
+        <Route path='/add-book' component={AddBook}/>
+        <Route path='/book-details/:id' component={BookDetailsContainer} />
+      </Switch>
       </div>
     );
   }
