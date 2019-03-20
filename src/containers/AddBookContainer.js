@@ -15,22 +15,26 @@ export class AddBookContainer extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        event.preventDefault();
     }
 
     handleChange(event) {
         const {name, value} = event.target
-        this.setState( {
+        this.setState({
             [name]: value
         })
     }
-
 
     render() {
         return (
             <div>
                 <div> 
                     <h1>Add book:</h1>
-                    <form className='book-form'>
+                    <form className='book-form' onClick={this.handleClick}>
                         <label htmlFor='title'>Title:</label>
                         <input 
                             type='text' 
@@ -49,7 +53,7 @@ export class AddBookContainer extends Component {
                         />
                         <label htmlFor='pages'>Pages:</label>
                         <input 
-                            type='text' 
+                            type='number' 
                             id='pages'
                             onChange={this.handleChange}
                             name='pages'
@@ -68,11 +72,12 @@ export class AddBookContainer extends Component {
                 </div>
                 <div> 
                     <h1>Book:</h1>
-                    <form className='book-form'>
+                    <form>
                         <p>Title: {this.state.title}</p>
                         <p>Author: {this.state.author}</p>
                         <p>Pages: {this.state.pages}</p>
-                        <p>Photo: {this.state.photo}</p>
+                        <p>Photo: </p>
+                        <img src={this.state.photo}/>
                     </form>
                 </div>
              </div>
