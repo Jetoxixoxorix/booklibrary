@@ -4,31 +4,36 @@
             "id": 1,
             "title": "Lod",
             "author": "Jacek Dukaj",
-            "pages": 1000
+            "pages": 1000,
+            "photo": "http://www.publio.pl/files/product/big/c1/5d/12/59077-lod-jacek-dukaj-1.jpg"
         },
         {
             "id": 2,
             "title": "Slepowidzenie",
             "author": "Peter Watts",
-            "pages": 450
+            "pages": 450,
+            "photo": "http://1.bp.blogspot.com/-1ATLqkM4BTU/Uu5d7fUfKcI/AAAAAAAAAPk/cm02YJF9rv0/s1600/Slepowidzenie-doREC.jpg"
         },
         {
             "id": 3,
             "title": "Metro 2033",
-            "author": "Dmitrij Gluchovsky",
-            "pages": 550
+            "author": "Dmitry Gluchovsky",
+            "pages": 550,
+            "photo": "https://crazypumpkinsnest.files.wordpress.com/2010/05/m.png"
         },
         {
             "id": 4,
             "title": "Pan Tadeusz",
             "author": "Adam Mickiewicz",
-            "pages": 200
+            "pages": 200,
+            "photo": "https://virtualo.pl/covers/large/208621.jpg"
         },
         {
             "id": 5,
             "title": "Pod kopula",
             "author": "Stephen King",
-            "pages": 900
+            "pages": 900,
+            "photo": "https://mrgurulimited.pl/wp-content/uploads/2016/09/pod_kopula.jpg"
         }
     ]
 }

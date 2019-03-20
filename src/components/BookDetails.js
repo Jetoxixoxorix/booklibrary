@@ -7,6 +7,7 @@ export const BookDetails = props => {
             <p>Title: {props.book.title}</p>
             <p>Author: {props.book.author}</p>
             <p>Number of pages: {props.book.pages}</p>
+            <img src={props.book.photo} height="500" alt=""/>
         </div>
     )
 }
