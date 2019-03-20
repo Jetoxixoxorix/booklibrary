@@ -1,25 +1,37 @@
 import React, {Component} from 'react';
 import '../styles/addbook.css';
+import importBooks from '../files/books.json'; 
 
 export class AddBookContainer extends Component {
     constructor() {
         super();
         this.state = {
-            newBook: {
-                id: 0,
-                title: "",
-                author: "",
-                pages: "",
-                photo: ""
-            }
+            id: 0,
+            title: "",
+            author: "",
+            pages: "",
+            photo: ""
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.saveBook = this.saveBook.bind(this);
     }
 
-    handleClick(event) {
+    saveBook(book) {
+        importBooks.books.push(book);
+    }
+
+    handleSubmit(event) {
         event.preventDefault();
+        const book = {
+            id: this.state.id,
+            title: this.state.title,
+            author: this.state.author,
+            pages: this.state.pages,
+            photo: this.state.photo
+        }
+        this.saveBook(book);
     }
 
     handleChange(event) {
@@ -34,7 +46,7 @@ export class AddBookContainer extends Component {
             <div>
                 <div> 
                     <h1>Add book:</h1>
-                    <form className='book-form' onClick={this.handleClick}>
+                    <form className='book-form' onSubmit={this.handleSubmit}>
                         <label htmlFor='title'>Title:</label>
                         <input 
                             type='text' 
@@ -77,7 +89,7 @@ export class AddBookContainer extends Component {
                         <p>Author: {this.state.author}</p>
                         <p>Pages: {this.state.pages}</p>
                         <p>Photo: </p>
-                        <img src={this.state.photo}/>
+                        <img src={this.state.photo} alt=""/>
                     </form>
                 </div>
              </div>
