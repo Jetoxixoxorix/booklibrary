@@ -99,45 +99,49 @@ export class AddBookContainer extends Component {
                 <div> 
                     <h1>Add book:</h1>
                     <form className='book-form' onSubmit={this.handleSubmit}>
-                        <label htmlFor='title'>Title:</label>
-                        <input 
-                            type='text' 
-                            id='title'
-                            onChange={this.handleChange}
-                            name='title'
-                            value={this.state.title}
-                        />
-                        {formErrors.title.length > 0 && <span>{formErrors.title}</span>}
+                        <label htmlFor='title'>Title:
+                            <input 
+                                type='text' 
+                                id='title'
+                                onChange={this.handleChange}
+                                name='title'
+                                value={this.state.title}
+                            />
+                        </label>
+                        {formErrors.title.length > 0 && <span className='error-message'>{formErrors.title}</span>}
                         
-                        <label htmlFor='author'>Author:</label>
-                        <input 
-                            type='text' 
-                            id='author'
-                            onChange={this.handleChange}
-                            name='author'
-                            value={this.state.author}
-                        />
-                        {formErrors.author.length > 0 && <span>{formErrors.author}</span>}
+                        <label htmlFor='author'>Author:
+                            <input 
+                                type='text' 
+                                id='author'
+                                onChange={this.handleChange}
+                                name='author'
+                                value={this.state.author}
+                            />
+                        </label>
+                        {formErrors.author.length > 0 && <span className='error-message'>{formErrors.author}</span>}
 
-                        <label htmlFor='pages'>Pages:</label>
-                        <input 
-                            type='number' 
-                            id='pages'
-                            onChange={this.handleChange}
-                            name='pages'
-                            value={this.state.pages}
-                        />
-                        {formErrors.pages.length > 0 && <span>{formErrors.pages}</span>}
+                        <label htmlFor='pages'>Pages:
+                            <input 
+                                type='number' 
+                                id='pages'
+                                onChange={this.handleChange}
+                                name='pages'
+                                value={this.state.pages}
+                            />
+                        </label>
+                        {formErrors.pages.length > 0 && <span className='error-message'>{formErrors.pages}</span>}
 
-                        <label htmlFor='photo'>Photo:</label>
-                        <input 
-                            type='text' 
-                            id='photo'
-                            onChange={this.handleChange}
-                            name='photo'
-                            value={this.state.photo}
-                        />
-                        {formErrors.photo.length > 0 && <span>{formErrors.photo}</span>}
+                        <label htmlFor='photo'>Photo:
+                            <input 
+                                type='text' 
+                                id='photo'
+                                onChange={this.handleChange}
+                                name='photo'
+                                value={this.state.photo}
+                            />
+                        </label>
+                        {formErrors.photo.length > 0 && <span className='error-message'>{formErrors.photo}</span>}
 
                         <input type='submit' value='Add book'/>
                     </form>

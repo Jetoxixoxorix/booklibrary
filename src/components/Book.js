@@ -11,7 +11,3 @@ export const Book = props => {
         </NavLink>
     );
 }
-
-
-
-   

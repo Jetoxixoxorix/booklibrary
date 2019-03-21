@@ -1,5 +1,13 @@
 .book-form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: center;
+}
+
+.book-form input {
+    width:200px; 
+}
+
+.error-message {
+    color: red;
 }

@@ -5,6 +5,7 @@ import {BooksContainer} from '../containers/BooksContainer';
 import {Switch, Route} from 'react-router-dom';
 import {AddBookContainer} from '../containers/AddBookContainer';
 import {BookDetailsContainer} from '../containers/BookDetailsContainer';
+import {LoginContainer} from '../containers/LoginContainer';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/books' component={BooksContainer}/>
         <Route path='/add-book' component={AddBookContainer}/>
         <Route path='/book-details/:id' component={BookDetailsContainer} />
+        <Route path='/login' component={LoginContainer} />
       </Switch>
     </div>
   );

@@ -28,4 +28,3 @@ export class BookDetailsContainer extends Component {
         )
     }
 }
-
