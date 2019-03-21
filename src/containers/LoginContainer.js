@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import importUsers from '../files/users.json';
+import {Login} from '../components/Login';
 
 const findUser = (user) => {
     return importUsers.users.find(u =>  u.username === user.username && u.password === user.password);
@@ -41,31 +42,6 @@ export class LoginContainer extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Login</h1>
-                    <label htmlFor="username">Username:
-                        <input 
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label htmlFor="password">Password:
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <input type="submit" value="Log in" />
-                </form>
-            </div>
-        )
+        return <Login handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>;
     }
 }
