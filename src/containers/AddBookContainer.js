@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import '../styles/addbook.css';
-import importBooks from '../files/books.json'; 
+import {AddBook} from '../components/AddBook';
+
+const data = require('../files/books.json');
 
 export class AddBookContainer extends Component {
     constructor() {
@@ -16,16 +18,25 @@ export class AddBookContainer extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.saveBook = this.saveBook.bind(this);
+        this.idSequence = this.idSequence.bind(this);
     }
 
     saveBook(book) {
-        importBooks.books.push(book);
+        data.books.push(book);
+    }
+
+    idSequence() {
+       const length = data.books.length;
+       const lastId = data.books[length - 1].id;
+       const newId = lastId + 1;
+
+       return newId;
     }
 
     handleSubmit(event) {
         event.preventDefault();
         const book = {
-            id: this.state.id,
+            id: this.idSequence(),
             title: this.state.title,
             author: this.state.author,
             pages: this.state.pages,
@@ -42,6 +53,9 @@ export class AddBookContainer extends Component {
     }
 
     render() {
+        // return(
+        //     <AddBook handleSubmit={this.handleSubmit} handleChange={this.handleChange} newBook={this.state}/>
+        // )
         return (
             <div>
                 <div> 
