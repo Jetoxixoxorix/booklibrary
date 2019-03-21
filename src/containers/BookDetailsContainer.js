@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import importBooks from '../files/books.json';
 import {BookDetails} from '../components/BookDetails';
 
+const findBook = (id) => {
+    return importBooks.books.find(book => book.id == id);
+}
+
 export class BookDetailsContainer extends Component {
     constructor(props){
         super(props);
@@ -11,14 +15,10 @@ export class BookDetailsContainer extends Component {
     }
 
     componentDidMount() {
-        const chosenBook = importBooks.books.filter(b => {
-            if(b.id == this.props.match.params.id){
-                return b;
-            }
-        })
-
+        const chosenBook = findBook(this.props.match.params.id);
+  
         this.setState({
-            book: chosenBook[0]
+            book: chosenBook
         })
     }
 

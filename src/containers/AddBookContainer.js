@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../styles/addbook.css';
-import {AddBook} from '../components/AddBook';
 
 const data = require('../files/books.json');
 
@@ -50,7 +49,7 @@ export class AddBookContainer extends Component {
             this.saveBook(book);
         }
         else {
-            alert("There are empty form items!");
+            alert("There are empty form inputs!");
         }
     }
 
