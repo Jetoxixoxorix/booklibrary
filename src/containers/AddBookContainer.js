@@ -3,11 +3,15 @@ import '../styles/addbook.css';
 
 const data = require('../files/books.json');
 
-const formValid = (state) => {
+const formValidation = ({formErrors, ...restOfState}) => {
     let valid = true;
     
-    Object.values(state).forEach(value => {
+    Object.values(restOfState).forEach(value => {
         value.length === 0 && (valid = false);
+    });
+
+    Object.values(formErrors).forEach(value => {
+        value.length > 0 && (valid = false);
     });
 
     return valid;
@@ -20,7 +24,13 @@ export class AddBookContainer extends Component {
             title: "",
             author: "",
             pages: "",
-            photo: ""
+            photo: "",
+            formErrors:{
+                title: "",
+                author: "",
+                pages: "",
+                photo: ""
+            }
         }
     }
 
@@ -38,7 +48,7 @@ export class AddBookContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        if(formValid(this.state)) {
+        if(formValidation(this.state)) {
             const book = {
                 id: this.idSequence(),
                 title: this.state.title,
@@ -49,21 +59,41 @@ export class AddBookContainer extends Component {
             this.saveBook(book);
         }
         else {
-            alert("There are empty form inputs!");
+            alert("Correct form!");
         }
     }
 
     handleChange = event => {
-        const {name, value} = event.target
+        event.preventDefault();
+        const {name, value} = event.target;
+        let formErrors = {...this.state.formErrors};
+
+        switch(name) {
+            case('title'):
+                formErrors.title = value.length < 2 ? "too short" : "";
+                break;
+            case('author'):
+                formErrors.author = value.length < 3 ? "too short" : "";
+                break;
+            case('pages'):
+                formErrors.pages = value < 1 ? "number of pages should be bigger than 0" : "";
+                break;
+            case('photo'):
+                formErrors.photo = value.length < 5 ? "provide correct address" : "";
+                break;
+            default:
+                break;
+        }
+
         this.setState({
+            formErrors,
             [name]: value
         })
     }
 
     render() {
-        // return(
-        //     <AddBook handleSubmit={this.handleSubmit} handleChange={this.handleChange} newBook={this.state}/>
-        // )
+        const {formErrors} = this.state;
+        
         return (
             <div>
                 <div> 
@@ -77,6 +107,8 @@ export class AddBookContainer extends Component {
                             name='title'
                             value={this.state.title}
                         />
+                        {formErrors.title.length > 0 && <span>{formErrors.title}</span>}
+                        
                         <label htmlFor='author'>Author:</label>
                         <input 
                             type='text' 
@@ -85,6 +117,8 @@ export class AddBookContainer extends Component {
                             name='author'
                             value={this.state.author}
                         />
+                        {formErrors.author.length > 0 && <span>{formErrors.author}</span>}
+
                         <label htmlFor='pages'>Pages:</label>
                         <input 
                             type='number' 
@@ -93,6 +127,8 @@ export class AddBookContainer extends Component {
                             name='pages'
                             value={this.state.pages}
                         />
+                        {formErrors.pages.length > 0 && <span>{formErrors.pages}</span>}
+
                         <label htmlFor='photo'>Photo:</label>
                         <input 
                             type='text' 
@@ -101,6 +137,8 @@ export class AddBookContainer extends Component {
                             name='photo'
                             value={this.state.photo}
                         />
+                        {formErrors.photo.length > 0 && <span>{formErrors.photo}</span>}
+
                         <input type='submit' value='Add book'/>
                     </form>
                 </div>
