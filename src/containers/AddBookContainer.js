@@ -4,28 +4,32 @@ import {AddBook} from '../components/AddBook';
 
 const data = require('../files/books.json');
 
+const formValid = (state) => {
+    let valid = true;
+    
+    Object.values(state).forEach(value => {
+        value.length === 0 && (valid = false);
+    });
+
+    return valid;
+}
+
 export class AddBookContainer extends Component {
     constructor() {
         super();
         this.state = {
-            id: 0,
             title: "",
             author: "",
             pages: "",
             photo: ""
         }
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.saveBook = this.saveBook.bind(this);
-        this.idSequence = this.idSequence.bind(this);
     }
 
-    saveBook(book) {
+    saveBook = book => {
         data.books.push(book);
     }
 
-    idSequence() {
+    idSequence = () => {
        const length = data.books.length;
        const lastId = data.books[length - 1].id;
        const newId = lastId + 1;
@@ -33,19 +37,24 @@ export class AddBookContainer extends Component {
        return newId;
     }
 
-    handleSubmit(event) {
+    handleSubmit = event => {
         event.preventDefault();
-        const book = {
-            id: this.idSequence(),
-            title: this.state.title,
-            author: this.state.author,
-            pages: this.state.pages,
-            photo: this.state.photo
+        if(formValid(this.state)) {
+            const book = {
+                id: this.idSequence(),
+                title: this.state.title,
+                author: this.state.author,
+                pages: this.state.pages,
+                photo: this.state.photo
+            }
+            this.saveBook(book);
         }
-        this.saveBook(book);
+        else {
+            alert("There are empty form items!");
+        }
     }
 
-    handleChange(event) {
+    handleChange = event => {
         const {name, value} = event.target
         this.setState({
             [name]: value
