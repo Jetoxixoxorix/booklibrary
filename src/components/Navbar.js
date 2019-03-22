@@ -11,7 +11,7 @@ export const Navbar = () => {
                 <li><NavLink to="/add-book">Add book</NavLink></li>
             </ul>
             <ul className="menu menu-right">
-                <li>Register</li>
+                <li><NavLink to="/register">Register</NavLink></li>
                 <li><NavLink to="/login">Log in</NavLink></li>
             </ul>
         </nav>

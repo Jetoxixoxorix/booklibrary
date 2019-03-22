@@ -31,11 +31,7 @@ export class LoginContainer extends Component {
            password: this.state.password
         }
 
-        
-        //!findUser(user) && alert("No such user");#
-
-       findUser(user) ? this.props.history.push("/books") : alert("No such user");
- 
+       findUser(user) ? this.props.history.push("/") : alert("No such user"); 
     }
 
     handleChange = (event) => {
