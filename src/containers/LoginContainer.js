@@ -3,6 +3,7 @@ import importUsers from '../files/users.json';
 import {Login} from '../components/Login';
 
 const findUser = (user) => {
+    console.log(user);
     return importUsers.users.find(u =>  u.username === user.username && u.password === user.password);
 }
 
@@ -30,7 +31,11 @@ export class LoginContainer extends Component {
            password: this.state.password
         }
 
-        return !findUser(user) && alert("No such user");
+        
+        //!findUser(user) && alert("No such user");#
+
+       findUser(user) ? this.props.history.push("/books") : alert("No such user");
+ 
     }
 
     handleChange = (event) => {
